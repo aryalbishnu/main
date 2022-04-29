@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Sucess loging</h2>
+
+	<table>
+		<tr>
+			<th>UserId</th>
+			<th>Address</th>
+			<th>email</th>
+			<th>password</th>
+		</tr>
+
+	<tr th:each="list:${listuser}">
+	<td th:text="'Id:' + ${list.Id}"></td>
+	<td th:text="'Address: ' + ${list.Address}"></td>
+	<td th:text="'Email: ' + ${list.Email}" ></td>
+	<td th:text="'Password: ' + ${list.Password}"></td>
+	
+	</tr>
+
+	</table>
+
+</body>
+
+<footer>
+<p><small>Copyright (c)JIIT All Rights Reserved.</small></p>
+</footer>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.theamleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add time</title>
+</head>
+<body>
+<h1>Add a User Time Card</h1>
+
+<form th:action="@{/doadd}" th:object="${user}" method="post">
+
+<table>
+
+                <tr>
+                    <td>UserId:</td>
+                    <td><input type="text" th:field="*{id}" /></td>
+                    <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">User id  Error</td>
+                </tr>
+               
+                <tr>
+                    <td>UserName:</td>
+                    <td><input type="text" th:field="*{username}" /></td>
+                    <td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">UserName Error</td>
+                </tr>
+  
+                </table>
+
+<p>In Time:<input type="text" placeholder="Enter in Time" th:field="*{inTime}" /></p>
+
+<p>Out Time:<input type="text" placeholder="Enter out Time" th:field="*{outTime}" /></p>
+
+<p>Break In Time:<input type="text" placeholder="Enter break in time" th:field="*{breakinTime}" /></p>
+
+<p>Break Out Time:<input type="text" placeholder="Enter break out time" th:field="*{breakoutTime}" /></p>
+
+ <button type="submit" class="button is-link">Save</button>
+ 
+ </form>
+
+</body>
+</html>

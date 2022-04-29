@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.theamleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>edit title here</title>
+</head>
+<body>
+<h1>Edit user detail</h1>
+
+<form th:action="@{/doedit}" th:object="${hari}" method="post">
+
+<p th:text="|ID: *{id}|"></p><input type="hidden" th:field="*{id}" >
+
+
+<table>
+               
+                <tr>
+                    <td>UserName:</td>
+                    <td><input type="text" th:field="*{username}" /></td>
+                    <td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">UserName Error</td>
+                </tr>
+                <tr>
+                    <td>Contact:</td>
+                    <td><input type="text" th:field="*{contact}" /></td>
+                    <td th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}">Contact Error</td>
+                </tr>
+                 <tr>
+                    <td>Address:</td>
+                    <td><input type="text" th:field="*{address}" /></td>
+                    <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Address Error</td>
+                </tr>
+                 <tr>
+                    <td>E-mail:</td>
+                    <td><input type="email" th:field="*{email}" /></td>
+                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">E-mail Error</td>
+                </tr>
+                 <tr>
+                    <td>Password:</td>
+                    <td><input type="password" th:field="*{password}" /></td>
+                    <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Save</button></td>
+                </tr>
+            </table>
+<!--  
+<p>UserName:<input type="text" placeholder="Enter username" th:field="*{username}" /></p>
+
+<p>Contact:<input type="text" placeholder="Enter contact" th:field="*{contact}" /></p>
+
+<p>Address:<input type="text" placeholder="Enter address" th:field="*{address}" /></p>
+
+<p>E-mail:<input type="email" placeholder="Enter email" th:field="*{email}" /></p>
+
+<p>Password:<input type="password" placeholder="Enter password" th:field="*{password}" /></p>
+
+ <button type="submit" class="button is-link">Save</button>
+ -->
+ </form>
+
+</body>
+</html>

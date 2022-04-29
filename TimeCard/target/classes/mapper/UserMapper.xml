@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.example.demo.mapper.UserMapper">
+  
+  <insert id="doinsert">
+  INSERT INTO public."time"(
+	username, "inTime", "outTime")
+	VALUES (#{username}, #{inTime}, #{outTime})
+  </insert>
+  <update id="doupdate">
+  UPDATE time
+	SET "outTime"=#{outTime}
+	where username=#{username}
+	
+  
+  </update>
+ 
+  </mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.example.demo.mapper.UserMapper">
+  
+  <insert id="doinsert">
+  INSERT INTO public.haris(
+	id, username, contact, address, email, password)
+	VALUES (#{id}, #{username}, #{contact}, #{address}, #{email}, #{password}) ;
+
+ 
+  </insert>
+ 
+
+  <select id="doLoging" resultType="int">
+  select count(email) from public.haris where email=#{email} and password=#{password}
+  </select>
+  
+  <select id ="doSelect" resultType ="com.example.demo.entity.Transfer">
+  select * from public.haris
+  ORDER BY id ASC;
+  </select>
+  
+   <delete id="deleteUser">
+  DELETE FROM public.haris
+	WHERE id=#{id} and username=#{username} and contact=#{contact} and address=#{address} and email=#{email} and password = #{password};
+  </delete>
+  
+  <update id="editUser">
+   UPDATE  haris
+	SET username=#{username}, contact=#{contact} , address=#{address} ,email=#{email}, password=#{password}
+	WHERE id=#{id} 
+  </update>
+ 
+  
+  <select id="searchUser" resultType="com.example.demo.entity.Transfer">
+		SELECT * from public.haris 
+		<where>
+		<if test="username !=''">
+		username =#{username}
+		</if>
+		<if test="email !=''">
+		email =#{email}
+		</if>
+
+		</where>
+	
+	</select>
+
+	<insert id="doinput">
+	INSERT INTO public."cards"(
+	id, username, "inTime", "outTime")
+	VALUES (#{id}, #{username}, #{inTime}, #{outTime})
+	</insert>
+	
+		<select id="timeLoging" resultType="int">
+  select count(id) from public.haris where id=#{id} and username=#{username}
+  </select>
+	
+	<update id="doupdate">
+  UPDATE cards
+	SET "outTime"=#{outTime}
+	where id=#{id} and username=#{username}
+	</update>
+	
+  
+  
+  
+</mapper>

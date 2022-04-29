@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.UserMapper">
+<insert id ="doinsert">
+INSERT INTO public.userlist(
+	"id", "address", "email", "password")
+	VALUES (#{Id}, #{Address}, #{Email}, #{Password})
+</insert>
+<select id ="getlist" resultType="com.example.demo.entity.Transfer">
+SELECT * FROM public.userlist
+
+</select>
+</mapper>

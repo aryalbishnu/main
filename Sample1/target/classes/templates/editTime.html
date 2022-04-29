@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.theamleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>edit time</title>
+</head>
+<body>
+<h1>Edit user Time Card</h1>
+
+<form th:action="@{/doedit}" th:object="${user}" method="post">
+
+<p th:text="|ID: *{id}|"></p><input type="hidden" th:field="*{id}" >
+ 
+<p th:text="|Username: *{username}|"></p><input type="hidden" th:field="*{username}" >
+
+<p>In Time:<input type="text" placeholder="Enter in Time" th:field="*{inTime}" /></p>
+
+<p>Out Time:<input type="text" placeholder="Enter out Time" th:field="*{outTime}" /></p>
+
+<p>Break In Time:<input type="text" placeholder="Enter break in time" th:field="*{breakinTime}" /></p>
+
+<p>Break Out Time:<input type="text" placeholder="Enter break out time" th:field="*{breakoutTime}" /></p>
+
+ <button type="submit" class="button is-link">Save</button>
+ 
+ </form>
+
+</body>
+</html>

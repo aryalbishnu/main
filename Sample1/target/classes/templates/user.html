@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.theamleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+<h1>Creat a form</h1>
+<form  th:action="@{/checkin}" th:object="${hari}" method="post">
+
+ <table>
+                <tr>
+                    <td>Id:</td>
+                    <td><input type="text" th:field="*{id}" /></td>
+                    <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Id Error</td>
+                </tr>
+                <tr>
+                    <td>UserName:</td>
+                    <td><input type="text" th:field="*{username}" /></td>
+                    <td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">UserName Error</td>
+                </tr>
+                <tr>
+                    <td>Contact:</td>
+                    <td><input type="text" th:field="*{contact}" /></td>
+                    <td th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}">Contact Error</td>
+                </tr>
+                 <tr>
+                    <td>Address:</td>
+                    <td><input type="text" th:field="*{address}" /></td>
+                    <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Address Error</td>
+                </tr>
+                 <tr>
+                    <td>E-mail:</td>
+                    <td><input type="email" th:field="*{email}" /></td>
+                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">E-mail Error</td>
+                </tr>
+                 <tr>
+                    <td>Password:</td>
+                    <td><input type="password" th:field="*{password}" /></td>
+                    <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+
+
+
+
+
+
+
+<!--  <p>Id:<input type="text" placeholder="enter id" name="id"></p>
+<p>UserName:<input type="text" placeholder="enter username" name="username"></p>
+<p>Contact:<input type="text" placeholder="enter contact" name="contact"></p>
+<p>Address:<input type="text" placeholder="enter address" name="address"></p>
+<p>E-mail:<input type="email" placeholder="enter email" name="email"></p>
+<p>Password:<input type="password" placeholder="enter password" name="password"></p>
+<button type="submit">Submit</button>
+-->
+</form>
+</body>
+</html>
